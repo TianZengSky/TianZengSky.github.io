@@ -33,7 +33,7 @@ twitter:
   card: summary
 logo: logo.png
 social:
-  name: Songzi Vong
+  name: ZENG Tian
   links:
     - https://twitter.com/vszhub
     - https://github.com/TianZengSky
@@ -54,6 +54,7 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Songzi Vong
-  url: https://github.com/vszhub/
-  email: vszhub@gmail.com
+  name: ZENG Tian
+  url: https://github.com/TianZengSky/
+  email: tianzeng7-c@my.cityu.edu.hk
+
