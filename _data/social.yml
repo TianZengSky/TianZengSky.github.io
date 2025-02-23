@@ -1,10 +1,11 @@
 - title: Email
   url: mailto:tianzeng7-c@my.cityu.edu.hk
   icon: fas fa-envelope
-- title: GitHub
-  url: https://github.com/TianZengSky
-  icon: fab fa-github
 - title: StarShooter
   url: https://www.istarshooter.com/user/15721
   icon: fas fa-binoculars
+- title: GitHub
+  url: https://github.com/TianZengSky
+  icon: fab fa-github
+
 
