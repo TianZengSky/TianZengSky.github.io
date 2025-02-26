@@ -7,17 +7,18 @@ tags: astrophotography
 
 *Data from [Tim](https://www.istarshooter.com/user/33756), processed by me.
 
+Spanning 100 light-years in the constellation Perseus, the California Nebula glows like a celestial silhouette of its namesake state. Its crimson hues are ignited by Xi Persei, a massive blue star whose ultraviolet radiation ionizes hydrogen gas, painting the nebula in the signature red of Hα emission (656 nm).
 
 <div style="text-align: center;">
-  <img src="/assets/images/RGBH.jpg" alt="M38 Cluster with H-alpha Nebulosity" width="95%" />
+  <img src="/assets/images/Caliornia Nebula.jpg" alt="SHO" width="95%" />
 </div>
 
- 
-Beneath the cold mathematics of light-years and spectral lines lies a cosmic canvas painted with stardust. The sapphire glitter of M38, ancient yet newborn, dances in gravitational harmony—a frozen firework from an era when Earth's continents were still forming. And there, in the shadows between stars, the crimson whispers of hydrogen tell stories yet unfinished: ephemeral veils where gravity's patient hand will sculpt new worlds from chaos, continuing the billion-year waltz of creation and decay.
+**SHO (Sulfur-Hydrogen-Oxygen):**
+The "Hubble Palette" transforms sulfur (SII, 672 nm) into red, Hα into green, and OIII (500 nm) into blue. This false-color alchemy unveils shockwaves and turbulence invisible to human eyes, exposing the nebula’s violent dance of stellar winds and magnetic fields.
 
+<div style="text-align: center;">
+  <img src="/assets/images/Caliornia Nebula_HOO.jpg" alt="HOO" width="95%" />
+</div>
 
-**M38 (NGC 1912):**  
-An open star cluster in the constellation Auriga, approximately 420 million years old and 3,200 light-years from Earth. Its distinctive "crossbar" shape, formed by a dense concentration of young blue stars, makes it a striking deep-sky object. The cluster spans about 25 light-years and contains over 100 identified members.
-
-**Hydrogen-alpha (Hα) Nebulosity:**  
-The faint reddish glow surrounding M38 is ionized hydrogen gas illuminated by nearby young stars. These H II regions are stellar nurseries where ultraviolet radiation from massive stars strips electrons from hydrogen atoms, causing them to emit characteristic crimson light at 656.3 nm wavelength—a spectral fingerprint of cosmic rebirth.
+**HOO (Hydrogen-Oxygen-Oxygen):**
+By mapping Hα to red and OIII to blue-green, this blend mimics the nebula’s natural glow. The delicate gradients highlight the interplay between hydrogen’s dominance and oxygen’s subtle traces—like cosmic brushstrokes of a stellar forge.
