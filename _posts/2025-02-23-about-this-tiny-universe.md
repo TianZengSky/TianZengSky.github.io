@@ -1,6 +1,6 @@
 ---
 layout: post
-title: About this tiny universe
+title: About This Tiny Universe
 date: 2025-02-23 16:16 +0800
 tags: thoughts
 ---
