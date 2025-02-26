@@ -10,14 +10,14 @@ tags: astrophotography
 Spanning 100 light-years in the constellation Perseus, the California Nebula glows like a celestial silhouette of its namesake state. Its crimson hues are ignited by Xi Persei, a massive blue star whose ultraviolet radiation ionizes hydrogen gas, painting the nebula in the signature red of Hα emission (656 nm).
 
 <div style="text-align: center;">
-  <img src="/assets/images/Caliornia Nebula.jpg" alt="SHO" width="95%" />
+  <img src="/assets/images/California Nebula.jpg" alt="SHO" width="95%" />
 </div>
 
 **SHO (Sulfur-Hydrogen-Oxygen):**
 The "Hubble Palette" transforms sulfur (SII, 672 nm) into red, Hα into green, and OIII (500 nm) into blue. This false-color alchemy unveils shockwaves and turbulence invisible to human eyes, exposing the nebula’s violent dance of stellar winds and magnetic fields.
 
 <div style="text-align: center;">
-  <img src="/assets/images/Caliornia Nebula_HOO.jpg" alt="HOO" width="95%" />
+  <img src="/assets/images/California Nebula_HOO.jpg" alt="HOO" width="95%" />
 </div>
 
 **HOO (Hydrogen-Oxygen-Oxygen):**
