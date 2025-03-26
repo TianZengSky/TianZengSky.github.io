@@ -30,7 +30,7 @@ However, as a very very simple one, our simulation won't consider all of these e
 
 ***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: more dimentions need more data, more storage, more computation...*
 
-***Assumption 4:** we adopt newtonian gravitation completely. It is very understandable as well: save resource and is still precise enough due to almost no relativistic process here(we even abandoned Friedmann equations!).
+***Assumption 4:** we adopt newtonian gravitation completely. It is very understandable as well: save resource and is still precise enough due to almost no relativistic process here(we even abandoned Friedmann equations!).*
 
 **Step 2: Simulate your own universe with code**
 
