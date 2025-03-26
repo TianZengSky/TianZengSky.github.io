@@ -38,7 +38,7 @@ We have reviewed the basic physics of our simulation. Now we can try to write co
 
 ***Block 1: some initial setup works***
 
-'''python
+```python
 ## Initial conditions
 # ======================
 
@@ -46,7 +46,7 @@ import numba
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 设置核心数（必须在导入其他Numba函数前执行！）
+# Setup the number of CPU cores of computation
 numba.set_num_threads(16)
 
 # Parameters
@@ -95,7 +95,7 @@ plt.title("Initial Velocity Field")
 plt.tight_layout()
 plt.show()
 
-'''
+```
 
 We begin by defining a 2D "universe box" where particles initially follow a near-uniform grid with small perturbations. This mimics the early universe's density fluctuations that later grow into galaxies under gravity. And then we output a plot to have a visual expression of the initial perturbation field.
 
