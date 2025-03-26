@@ -99,7 +99,15 @@ plt.show()
 
 We begin by defining a 2D "universe box" where particles initially follow a near-uniform grid with small perturbations. This mimics the early universe's density fluctuations that later grow into galaxies under gravity. And then we output a plot to have a visual expression of the initial perturbation field.
 
+We can simply discuss the implementation of initial perturbation. The initial density fluctuations in the universe originate from quantum fluctuations during cosmic inflation. These perturbations follow a Gaussian random field with a nearly scale-invariant power spectrum (predicted by ΛCDM cosmology). In our 2D simulation:
 
+·Gaussian displacements (dx, dy) model these primordial density variations.
+
+·Amplitude control: sigma sets the perturbation magnitude, analogous to the primordial fluctuation amplitude. Smaller sigma → Weaker perturbations → Slower structure formation/ larger region that the simulation corresponds to.
+
+·Scale dependence: The /np.sqrt(2) normalization ensures proper variance distribution in 2D Cartesian coordinates.
+
+·The initial velocity field (vx, vy) is scaled from displacements. This implements the Zel'dovich approximation – a first-order Lagrangian perturbation theory that relates initial velocities to density gradients.
 
 
 
