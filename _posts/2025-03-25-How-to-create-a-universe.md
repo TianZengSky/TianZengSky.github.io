@@ -5,7 +5,7 @@ date: 2025-03-25 15:53 +0800qin
 tags: [astrophysics, N-body Simulation]
 ---
 
-*The author of this post is just a student who are interested in astrophysics, thus if you have any advise or criticism please feel free to [let me know](tianzeng7-c@my.cityu.edu.hk).
+*The author of this post is just a student who are interested in astrophysics, thus if you have any advise or criticism please feel free to [let me know]("tianzeng7-c@my.cityu.edu.hk" <tianzeng7-c@my.cityu.edu.hk>).
 
 *The example scripts have been uploaded to [Github](https://www.istarshooter.com/user/34977).
 
