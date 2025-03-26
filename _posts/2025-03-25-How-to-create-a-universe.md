@@ -16,7 +16,7 @@ Modern cosmology theory claims that:
 The early universe used to have a nearly uniform matter distribution, with very small density fluctuations. Over hundreds of millions of years, gravity amplified these fluctuations: denser regions attracted more matter, while emptier regions lost their material. Dark matter and other components first formed web-like filaments and dense halos. Within these halos, gas collapsed to create stars and galaxies, eventually building today’s cosmic structures – galaxy clusters connected by filaments, separated by vast voids. This process continues as gravity reshapes the universe’s large-scale structure.
 
 <div style="text-align: center;">
-  <img src="/assets/images/TNG50_z3_LymanAlpha_emission.jpg" alt="Cosmic web" width="99%" />
+  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="Cosmic web" width="60%" />
 </div>
 *This is how the large-scale stucture looks like. The figure is from [IllustrisTNG project](https://www.tng-project.org/media/).
  
