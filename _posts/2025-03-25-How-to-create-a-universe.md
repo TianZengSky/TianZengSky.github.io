@@ -26,7 +26,7 @@ However, as a very very simple one, our simulation won't consider all of these e
 
 ***Assumption 1:** no inflation here. In order to reduce the computational cost, we do not consider the cosmic inflation. By the way, it could be experesssed as that our result is just some certain region of our universe.*
 
-***Assumption 2:** Only dark matter. **This is the core assumption of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, bayonic matters are not that important: although they dominate the feedback processes, the just take a very small fraction of our universe.*
+***Assumption 2:** Only dark matter. **This is the core assumption of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, baryonic matters are not that important: although they dominate the feedback processes, they just take a very small fraction of our universe.*
 
 
 
