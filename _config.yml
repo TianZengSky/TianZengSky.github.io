@@ -58,3 +58,13 @@ author:
   url: https://github.com/vshub/
   email: tianzeng7-c@my.cityu.edu.hk
 
+# 启用代码一键复制
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    # 启用行号与复制按钮
+    line_numbers: true
+    start_line: 1
