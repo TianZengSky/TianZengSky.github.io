@@ -147,10 +147,10 @@ OK, let's see the output:
 </div>
 
 <div style="text-align: left;">
-  <img src="/assets/images/output2.png" alt="output 1-heatmap" width="40%" />
+  <img src="/assets/images/output2.png" alt="output 1-heatmap" width="55%" />
 </div>
 
-***Block 2: some initial setup works***
+***Block 2: computing the gravitation***
 
 
 
