@@ -90,7 +90,7 @@ plt.title("Initial Positions")
 plt.xlabel("x "), plt.ylabel("y ")
 
 plt.subplot(122)
-plt.quiver(particles[:,0], particles[:,1], particles[:,2], particles[:,3], scale=10)
+plt.quiver(particles[:,0], particles[:,1], particles[:,2], particles[:,3], scale=30)
 plt.title("Initial Velocity Field")
 plt.tight_layout()
 plt.show()
@@ -109,6 +109,9 @@ We can simply discuss the implementation of initial perturbation. The initial de
 
 · The initial velocity field (vx, vy) is scaled from displacements. This implements the Zel'dovich approximation – a first-order Lagrangian perturbation theory that relates initial velocities to density gradients.
 
+· You should know that ```np.random.seed(42)``` is a pseudo-random method which is good for testing any ideas such as comparing results of different parameter values.
+
+OK, let's see the output:
 
 
 
