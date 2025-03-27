@@ -146,8 +146,8 @@ OK, let's see the output:
   <img src="/assets/images/output1.png" alt="output 1" width="90%" />
 </div>
 
-<div style="text-align: center;">
-  <img src="/assets/images/output2.png" alt="output 1-heatmap" width="90%" />
+<div style="text-align: left;">
+  <img src="/assets/images/output2.png" alt="output 1-heatmap" width="40%" />
 </div>
 
 ***Block 2: some initial setup works***
