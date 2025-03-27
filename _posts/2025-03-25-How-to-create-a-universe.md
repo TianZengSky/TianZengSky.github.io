@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/e0de407f-157c-497e-b035-f0f521fa5ad9)---
 layout: post
 title: "How to Create a Universe: A Simple Starting Point of Running a Cosmological Simulation on your PC"
 date: 2025-03-25 15:53 +0800qin
@@ -18,7 +18,7 @@ Modern cosmology theory claims that:
 The early universe used to have a nearly uniform matter distribution, with very small density fluctuations. Over hundreds of millions of years, gravity amplified these fluctuations: denser regions attracted more matter, while emptier regions lost their material. Dark matter and other components first formed web-like filaments and dense halos. Within these halos, gas collapsed to create stars and galaxies, eventually building today’s cosmic structures – galaxy clusters connected by filaments, separated by vast voids. This process continues as gravity reshapes the universe’s large-scale structure. This is the big picture of our simple simulation.
 
 <div style="text-align: center;">
-  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="Cosmic web" width="60%" />
+  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="Cosmic web" width="90%" />
 </div>
 *This is how the large-scale stucture looks like. The figure is from [IllustrisTNG project](https://www.tng-project.org/media/).
  
@@ -112,6 +112,8 @@ We can simply discuss the implementation of initial perturbation. The initial de
 · You should know that ```np.random.seed(42)``` is a pseudo-random method which is good for testing any ideas such as comparing results of different parameter values.
 
 OK, let's see the output:
-
+<div style="text-align: center;">
+  <img src="/assets/images/image.png" alt="output 1" width="90%" />
+</div>
 
 
