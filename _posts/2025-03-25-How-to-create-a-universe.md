@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e0de407f-157c-497e-b035-f0f521fa5ad9)---
+---
 layout: post
 title: "How to Create a Universe: A Simple Starting Point of Running a Cosmological Simulation on your PC"
 date: 2025-03-25 15:53 +0800qin
