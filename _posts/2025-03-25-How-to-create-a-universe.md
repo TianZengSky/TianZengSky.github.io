@@ -143,11 +143,11 @@ We can simply discuss the implementation of initial perturbation. The initial de
 
 OK, let's see the output:
 <div style="text-align: center;">
-  <img src="/assets/images/image.png" alt="output 1" width="90%" />
+  <img src="/assets/images/output1.png" alt="output 1" width="90%" />
 </div>
 
 <div style="text-align: center;">
-  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="output 1-heatmap" width="90%" />
+  <img src="/assets/images/output2.png" alt="output 1-heatmap" width="90%" />
 </div>
 
 ***Block 2: some initial setup works***
