@@ -95,6 +95,36 @@ plt.title("Initial Velocity Field")
 plt.tight_layout()
 plt.show()
 
+from matplotlib.colors import LogNorm  
+
+plt.figure(figsize=(20,10))
+
+# Create heatmap
+bins = np.linspace(0, L, 501)  # Grid size is here.
+heatmap, xedges, yedges = np.histogram2d(particles[:,0], particles[:,1], bins=(bins, bins))
+
+# Avoid zero
+heatmap += 1
+
+# LogNorm heatmap
+plt.imshow(
+    heatmap.T, 
+    origin='lower', 
+    extent=[0, L, 0, L], 
+    cmap='plasma', 
+    #interpolation='nearest',  # Notice that here adopting this might cause a blurry image
+    norm=LogNorm()  
+)
+
+# Colorbar（LogFormatter）
+cbar = plt.colorbar(label='Log Density (count+1)')
+cbar.formatter = plt.LogFormatter()
+cbar.update_ticks()
+
+plt.title("Initial Density Distribution (500x500 grids)")
+plt.xlabel("x "), plt.ylabel("y ")
+
+
 ```
 
 We begin by defining a 2D "universe box" where particles initially follow a near-uniform grid with small perturbations. This mimics the early universe's density fluctuations that later grow into galaxies under gravity. And then we output a plot to have a visual expression of the initial perturbation field.
@@ -115,5 +145,15 @@ OK, let's see the output:
 <div style="text-align: center;">
   <img src="/assets/images/image.png" alt="output 1" width="90%" />
 </div>
+
+<div style="text-align: center;">
+  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="output 1-heatmap" width="90%" />
+</div>
+
+***Block 2: some initial setup works***
+
+
+
+
 
 
