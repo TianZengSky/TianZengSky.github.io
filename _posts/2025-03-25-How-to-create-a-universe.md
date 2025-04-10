@@ -53,13 +53,13 @@ numba.set_num_threads(16)
 # Parameters
 n = 120            # number of particles is n*n
 L = 100.0         # Length of this universe
-sigma = 1e-11 * L  # factor of initial perturbation
+sigma = 1e-2 * L  # factor of initial perturbation
 r_cut = 20.0       # cut radius
-softening = 0.5    # avoiding infinite gravitation
-dt = 0.2          # time step
-steps = 50        # total steps
-grid_size = 100  # girds of figures autosaved
-v_factor = 0.5  # factor for Gaussian velocity field
+softening = 0.4    # avoiding infinite gravitation
+dt = 0.01          # time step
+steps = 1000        # total steps
+grid_size = 500  # girds of figures autosaved
+v_factor = 1e0  # factor for Gaussian velocity field
 
 # Create center coordinates of each grid
 grid = np.linspace(0, L, n, endpoint=False) + 0.5 * L/n
@@ -91,39 +91,10 @@ plt.title("Initial Positions")
 plt.xlabel("x "), plt.ylabel("y ")
 
 plt.subplot(122)
-plt.quiver(particles[:,0], particles[:,1], particles[:,2], particles[:,3], scale=30)
+plt.quiver(particles[:,0], particles[:,1], particles[:,2], particles[:,3], scale=50)
 plt.title("Initial Velocity Field")
 plt.tight_layout()
 plt.show()
-
-from matplotlib.colors import LogNorm  
-
-plt.figure(figsize=(20,10))
-
-# Create heatmap
-bins = np.linspace(0, L, 501)  # Grid size is here.
-heatmap, xedges, yedges = np.histogram2d(particles[:,0], particles[:,1], bins=(bins, bins))
-
-# Avoid zero
-heatmap += 1
-
-# LogNorm heatmap
-plt.imshow(
-    heatmap.T, 
-    origin='lower', 
-    extent=[0, L, 0, L], 
-    cmap='plasma', 
-    #interpolation='nearest',  # Notice that here adopting this might cause a blurry image
-    norm=LogNorm()  
-)
-
-# Colorbar（LogFormatter）
-cbar = plt.colorbar(label='Log Density (count+1)')
-cbar.formatter = plt.LogFormatter()
-cbar.update_ticks()
-
-plt.title("Initial Density Distribution (500x500 grids)")
-plt.xlabel("x "), plt.ylabel("y ")
 
 
 ```
