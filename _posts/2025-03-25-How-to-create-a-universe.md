@@ -111,7 +111,7 @@ We can simply discuss the implementation of initial perturbation. The initial de
 
 · The initial velocity field (vx, vy) is scaled from displacements. This implements the Zel'dovich approximation – a first-order Lagrangian perturbation theory that relates initial velocities to density gradients.
 
-· You should know that ```np.random.seed(42)``` is a pseudo-random method which is good for testing any ideas such as comparing results of different parameter values.
+· You should know that *np.random.seed(42)* is a pseudo-random method which is good for testing any ideas such as comparing results of different parameter values.
 
 OK, let's see the output:
 <div style="text-align: center;">
