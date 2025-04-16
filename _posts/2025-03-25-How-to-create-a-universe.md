@@ -124,7 +124,52 @@ OK, let's see the output:
 
 ***Block 2: computing the gravitation***
 
+The code for computing the gravitation (more accurately, acceleration) among all the particles is as follows:
 
+```python
+## Computing gravitation
+
+from numba import njit, prange
+
+@njit(parallel=True, fastmath=True)
+def compute_accelerations(positions, L, r_cut, softening):
+    N = positions.shape[0]
+    acc = np.zeros_like(positions)
+    factor = (L**2) / N  # Equivalent to G*m
+
+    for i in prange(N):
+        pos_i = positions[i]
+        for j in range(N):
+            if i == j: continue  # Avoid to compute gravitation between a particle and itself
+            
+            # Periodic mirror
+            delta = positions[j, :2] - pos_i[:2]  
+            delta -= np.round(delta / L) * L
+            
+            # Computing the distance
+            r_sq = delta[0]**2 + delta[1]**2 + softening**2  
+            if r_sq < r_cut**2 and r_sq > 0:
+                inv_r3 = 1.0 / (r_sq ** 1.5)  
+                acc[i, :2] += delta * inv_r3  # a ∝ 1/r²
+        
+        acc[i] *= factor  # Normalization
+
+    return acc
+
+
+```
+
+Let me explain some important points:
+***1.*** njit is a method to increase computational efficiency. The effect depends on:
+```python
+# Setup the number of CPU cores of computation
+numba.set_num_threads(16)
+```
+The number(here 16) is the number of CPU cores you would like to use. **So be aware of it**, making sure to set a correct number.
+
+***2.*** We use softening length to avoid infinite gravitation. So you can change the value of it to test the effect. It would be interesting. Usually, a relatively small value will be better.
+
+***3.*** You might be confused about the introduction of factor. This is because we should let the average density be approximately irrelevant to the spatial scale L. We could see
 
 
 
