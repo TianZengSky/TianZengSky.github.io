@@ -169,7 +169,33 @@ The number(here 16) is the number of CPU cores you would like to use. **So be aw
 
 ***2.*** We use softening length to avoid infinite gravitation. So you can change the value of it to test the effect. It would be interesting. Usually, a relatively small value will be better.
 
-***3.*** You might be confused about the introduction of factor. This is because we should let the average density be approximately irrelevant to the spatial scale L. We could see
+***3.*** You might be confused about the introduction of factor. This is because we should let the average density be approximately irrelevant to the spatial scale L. We could see the areal density $$\sigma$$ satisfies:
+
+$$
+\sigma = \frac{N \cdot m}{L^2}, where m is the mass of each particle; N is the total number of particles
+$$
+
+And according to the formula of acceleration, we could know factor here replaces G*m, let:
+
+$$
+\frac{L^2}{N} = G \cdot m
+$$
+
+Then it is easy to see letting fatcor be current form could ensure the density irrelevant to L. You might ask why $$\sigma$$ seems like equal to G. The reason is clear: all of these variables have been parameterized. The exact values are not important. The laws of their changes matter much more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
