@@ -172,8 +172,11 @@ The number(here 16) is the number of CPU cores you would like to use. **So be aw
 ***3.*** You might be confused about the introduction of factor. This is because we should let the average density be approximately irrelevant to the spatial scale L. We could see the areal density $$\sigma$$ satisfies:
 
 $$
-\sigma = \frac{N \cdot m}{L^2}, where m is the mass of each particle; N is the total number of particles
+\sigma = \frac{N \cdot m}{L^2},
 $$
+
+where m is the mass of each particle; N is the total number of particles.
+
 
 And according to the formula of acceleration, we could know factor here replaces G*m, let:
 
