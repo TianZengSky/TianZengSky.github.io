@@ -187,16 +187,164 @@ $$
 Then it is easy to see letting fatcor be current form could ensure the density irrelevant to L. You might ask why $$\sigma$$ seems like equal to G. The reason is clear: all of these variables have been parameterized. The exact values are not important. The laws of their changes matter much more.
 
 
+***Block 3: update velocity, position and acceleration***
+
+The code:
+
+```python
+
+# Update v, a, x
+# ======================
+
+# Leapfrog method
+def leapfrog_step(pos, vel, acc, dt):
+    vel_half = vel + 0.5 * acc * dt     # half new velocity
+    pos_new = pos + vel_half * dt       # full new position
+    pos_new = periodic_wrap(pos_new, L) # periodic boundary
+    acc_new = compute_accelerations(pos_new, L, r_cut, softening) # full new acceleration
+    vel_new = vel_half + 0.5 * acc_new * dt # full new velocity
+    return pos_new, vel_new, acc_new
 
 
+```
+
+Using leapfrog method could help us to avoid cumulative error in energy, and give a higher accuracy than normal method, i.e. explicit Euler method.
 
 
+***Block 4: perform the calculations and save the results***
+
+```python
+
+# Perform the calculations and save the results
+# ======================
+
+def generate_heatmap(positions, L, grid_size):  # Grid size is here.
+    
+    bins = np.linspace(0, L, grid_size+1)
+    density, _, _ = np.histogram2d(
+        positions[:,0], positions[:,1],
+        bins=(bins, bins)
+    )
+    
+    # Normalize to [0,1]
+    density = (density - density.min()) / (density.max() - density.min() + 1e-8)
+    return density.T  
 
 
+# Simulation
+
+import matplotlib.pyplot as plt
+import os
+
+output_dir = "./density_heatmaps"
+os.makedirs(output_dir, exist_ok=True)
+
+positions = particles[:, :2].copy()
+velocities = particles[:, 2:].copy()
+
+acc = compute_accelerations(positions, L, r_cut, softening)
+
+# Perform the simulation
+for step in range(steps):
+    # Update
+    positions, velocities, acc = leapfrog_step(positions, velocities, acc, dt)
+    
+    # Create heatmaps
+    density = generate_heatmap(positions, L, grid_size)  # Grid size is here.
+
+    # Avoid zero
+    density += 1
+    
+    # Visualization
+    plt.figure(figsize=(8,6))
+    plt.imshow(density, origin='lower', extent=[0, L, 0, L],
+              cmap='jet')#, norm=LogNorm(vmax=1.8))
+    
+    cbar = plt.colorbar(label='Log Density (count+1)')
+    cbar.formatter = plt.LogFormatter()
+    cbar.update_ticks()
+
+    plt.title(f"Step {step+1}/{steps}, t = {(step+1)*dt:.1f}")
+    plt.xlabel("x"), plt.ylabel("y")
+    
+    # Save
+    plt.savefig(f"{output_dir}/heatmap_{step:03d}.png", dpi=150, bbox_inches='tight')
+    plt.close()
+    
+    # Display the completion progress
+    if (step+1) % 10 == 0:
+        print(f"Saved heatmap {step+1}/{steps}")
+
+print(f"All figures are saved in: {os.path.abspath(output_dir)}")
 
 
+```
+
+OKay. When you run the simulation, all figures will be saved in the folder you specified. Now we have completed the whole simulation. Although it is very simple and crude, it could roughly show the growth of structures under pure gravitation. It is funny, but have its limitations. For example, we just simply ignored the cosmic expansion, and also, there is no feedback process due to the absence of baryonic components and black holes. Maybe you could try to add them on your computer ^_^
+
+Last but not least, we can see one example gif of the result. The code is attached below as well:
+
+<div style="text-align: center;">
+  <img src="/assets/images/output.gif" alt="output gif" width="100%" />
+</div>
+
+```python
 
 
+from PIL import Image
+import os
+
+# Input figures and output path
+input_path = r"c:\Users\zt\Desktop\SemB\Modern Topics\cosmic_web_simulation\density_heatmaps"
+output_gif = r"c:\Users\zt\Desktop\SemB\Modern Topics\cosmic_web_simulation\density_heatmaps\output.gif"      
+duration = 20                        # ms
+loop = 1                             # 0 for infinite loops
+
+# Get all figures
+image_files = [
+    os.path.join(input_path, f) 
+    for f in os.listdir(input_path) 
+    if f.lower().endswith(('.png', '.jpg', '.jpeg'))#, '.gif', '.bmp'))
+]
+
+# Sort by name
+image_files.sort()
+
+# Check
+if not image_files:
+    raise ValueError("No valid file！")
+
+
+frames = []
+try:
+    # Use the 1st fig. as standard
+    with Image.open(image_files[0]) as img:
+        base_size = img.size
+    
+    for image_file in image_files:
+        with Image.open(image_file) as img:
+            # Transfer to RGB
+            img = img.convert("RGB")
+           
+            img = img.resize(base_size)
+            frames.append(img.copy())
+            
+    # Save as .gif
+    frames[0].save(
+        output_gif,
+        save_all=True,
+        append_images=frames[1:],
+        duration=duration,
+        loop=loop,
+        optimize=True
+    )
+    
+    print(f"Success！Saved to：{output_gif}")
+    
+except Exception as e:
+    print(f"error：{str(e)}")
+
+```
 
 
 
