@@ -282,7 +282,7 @@ print(f"All figures are saved in: {os.path.abspath(output_dir)}")
 
 OKay. When you run the simulation, all figures will be saved in the folder you specified. Now we have completed the whole simulation. Although it is very simple and crude, it could roughly show the growth of structures under pure gravitation. It is funny, but have its limitations. For example, we just simply ignored the cosmic expansion, and also, there is no feedback process due to the absence of baryonic components and black holes. Maybe you could try to add them on your computer ^_^
 
-Last but not least, we can see one example gif of the result. The code is attached below as well:
+Last but not least, we can see one example gif of the result. It shows the growth and merger of several galaxies. Due to the limitation of this site, I just used a part of frames to create the gif. And the code is attached below as well:
 
 <div style="text-align: center;">
   <img src="/assets/images/output.gif" alt="output gif" width="100%" />
