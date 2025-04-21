@@ -131,6 +131,7 @@ The code for computing the gravitation (more accurately, acceleration) among all
 
 ```python
 ## Computing gravitation
+# ======================
 
 from numba import njit, prange
 
@@ -195,7 +196,6 @@ Then it is easy to see letting fatcor be current form could ensure the density i
 The code:
 
 ```python
-
 # Update v, a, x
 # ======================
 
@@ -223,7 +223,6 @@ Leapfrog method advantages:
 ***Block 4: perform the calculations and save the results***
 
 ```python
-
 # Perform the calculations and save the results
 # ======================
 
@@ -298,7 +297,8 @@ Last but not least, we can see one example gif of the result. It shows the growt
 </div>
 
 ```python
-
+# Creating gif
+# ======================
 
 from PIL import Image
 import os
@@ -352,6 +352,7 @@ try:
     
 except Exception as e:
     print(f"error：{str(e)}")
+
 
 ```
 
