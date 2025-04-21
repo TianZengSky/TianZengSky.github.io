@@ -5,10 +5,9 @@ date: 2025-03-25 15:53 +0800qin
 tags: [astrophysics, N-body Simulation, Python]
 ---
 
-*This little project originates from one of my master courses.
-*The author of this post is just a student who are interested in astrophysics, thus if you have any advise or criticism please feel free to [let me know]("tianzeng7-c@my.cityu.edu.hk" <tianzeng7-c@my.cityu.edu.hk>).
+This project originated from one of my master's courses. The author is a student passionate about astrophysics but did not learn it systematically - any advice or constructive criticism is [welcome]("tianzeng7-c@my.cityu.edu.hk" <tianzeng7-c@my.cityu.edu.hk>)!.
 
-*The example scripts have been uploaded to [Github](https://www.istarshooter.com/user/34977).
+*The example scripts will be uploaded to [Github](https://www.istarshooter.com/user/34977).
 
 Have you ever imagined that someday create a universe of your own in your childhood? Have you ever heared that some scientists on our little blue planet are working on simulating how the universe forms and evolves? And have you realized that you could try to run your own simulation on your PC? This post is actually a guide of making a very very simple cosmological simulation code.
 
