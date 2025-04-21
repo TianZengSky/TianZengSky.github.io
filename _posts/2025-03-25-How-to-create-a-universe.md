@@ -5,17 +5,17 @@ date: 2025-03-25 15:53 +0800qin
 tags: [astrophysics, N-body Simulation, Python]
 ---
 
-This project originated from one of my master's courses. The author is a student passionate about astrophysics but did not learn it systematically - any advice or constructive criticism is [welcome]("tianzeng7-c@my.cityu.edu.hk" <tianzeng7-c@my.cityu.edu.hk>)!.
+***This project originated from one of my master's courses. The author is a student passionate about astrophysics but did not learn it systematically - any advice or constructive criticism is [welcome]("tianzeng7-c@my.cityu.edu.hk" <tianzeng7-c@my.cityu.edu.hk>)!.***
 
-*The example scripts will be uploaded to [Github](https://www.istarshooter.com/user/34977).
+***Example scripts will be uploaded to [Github](https://www.istarshooter.com/user/34977).***
 
 Have you ever imagined that someday create a universe of your own in your childhood? Have you ever heared that some scientists on our little blue planet are working on simulating how the universe forms and evolves? And have you realized that you could try to run your own simulation on your PC? This post is actually a guide of making a very very simple cosmological simulation code.
 
 **Step 1: Physical Scenario**
 
-Modern cosmology theory claims that:
+Modern cosmology theory tells us:
 
-The early universe used to have a nearly uniform matter distribution, with very small density fluctuations. Over hundreds of millions of years, gravity amplified these fluctuations: denser regions attracted more matter, while emptier regions lost their material. Dark matter and other components first formed web-like filaments and dense halos. Within these halos, gas collapsed to create stars and galaxies, eventually building today’s cosmic structures – galaxy clusters connected by filaments, separated by vast voids. This process continues as gravity reshapes the universe’s large-scale structure. This is the big picture of our simple simulation.
+The early universe had near-uniform matter distribution with tiny density fluctuations. Over hundreds of millions of years, gravity amplified these fluctuations - dense regions attracted more matter while voids lost material. Dark matter formed cosmic webs of filaments and halos, within which gas collapsed to form stars and galaxies, ultimately creating today's universe of galaxy clusters connected by filaments, separated by vast voids. This gravitational dance continues shaping cosmic structure. This is the big picture of our simple simulation.
 
 <div style="text-align: center;">
   <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="Cosmic web" width="90%" />
@@ -24,17 +24,23 @@ The early universe used to have a nearly uniform matter distribution, with very 
  
 However, as a very very simple one, our simulation won't consider all of these elements. We have some assumptions to simplify the situation.
 
-***Assumption 1:** no inflation here. In order to reduce the computational cost, we do not consider the cosmic inflation. By the way, it could be experesssed as that our result is just some certain region of our universe.*
+***Assumption 1:** no cosmic expansion here. In order to reduce the computational cost, we do not consider the cosmic expansion. By the way, it could be experesssed as that our result just represents some certain region of our universe.*
 
-***Assumption 2:** only dark matter. **This is one of the core assumptions of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, baryonic matters are not that important: although they dominate the feedback processes, they just take a very small fraction of our universe.*
+***Assumption 2:** only dark matter. **This is one of the core assumptions of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, baryonic matters are not that important for a simplified simulation: although they dominate the feedback processes, they just take a very small fraction of our universe.*
 
-***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: more dimentions need more data, more storage, more computation...*
+***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: reducing spatial dimensions:
+
+Cuts data a lot of storage needs.
+
+Maintains qualitative structure formation patterns
+
+Enables personal computer execution
 
 ***Assumption 4:** we adopt newtonian gravitation completely. It is very understandable as well: save resource and is still precise enough due to almost no relativistic process here(we even abandoned Friedmann equations!).*
 
-**Step 2: Simulate your own universe with code**
+**Step 2: Simulate your own universe**
 
-We have reviewed the basic physics of our simulation. Now we can try to write codes. The tool is Python. Let's start to complete it one part by one part. I use Jupyter, so we could discuss by blocks.
+We have reviewed the basic physics of our simulation. Let's translate physics into Python code (using Jupyter Notebook):
 
 ***Block 1: some initial setup works***
 
@@ -98,19 +104,17 @@ plt.show()
 
 ```
 
-We begin by defining a 2D "universe box" where particles initially follow a near-uniform grid with small perturbations. This mimics the early universe's density fluctuations that later grow into galaxies under gravity. And then we output a plot to have a visual expression of the initial perturbation field.
+We create a 2D "universe box" with particles arranged in a near-uniform grid plus Gaussian perturbations, mimicking primordial density fluctuations from cosmic inflation. Key implementation notes:
 
-We can simply discuss the implementation of initial perturbation. The initial density fluctuations in the universe originate from quantum fluctuations during cosmic inflation. These perturbations follow a Gaussian random field with a nearly scale-invariant power spectrum (predicted by ΛCDM cosmology). In our 2D simulation:
+· Gaussian displacements (dx, dy) model quantum fluctuations
 
-· Gaussian displacements (dx, dy) model these primordial density variations.
+· Perturbation amplitude (σ): Controls structure formation speed
 
-· Amplitude control: sigma sets the perturbation magnitude, analogous to the primordial fluctuation amplitude. Smaller sigma → Weaker perturbations → Slower structure formation/ larger region that the simulation corresponds to.
+· Scale normalization: /np.sqrt(2) ensures proper variance distribution in 2D
 
-· Scale dependence: The /np.sqrt(2) normalization ensures proper variance distribution in 2D Cartesian coordinates.
+· Zel'dovich approximation: Links initial velocities to density gradients
 
-· The initial velocity field (vx, vy) is scaled from displacements. This implements the Zel'dovich approximation – a first-order Lagrangian perturbation theory that relates initial velocities to density gradients.
-
-· You should know that *np.random.seed(42)* is a pseudo-random method which is good for testing any ideas such as comparing results of different parameter values.
+· Reproducibility: np.random.seed(42) enables parameter comparison
 
 OK, let's see the output:
 <div style="text-align: center;">
@@ -207,7 +211,13 @@ def leapfrog_step(pos, vel, acc, dt):
 
 ```
 
-Using leapfrog method could help us to avoid cumulative error in energy, and give a higher accuracy than normal method, i.e. explicit Euler method.
+Leapfrog method advantages:
+
+· Energy conservation (vs Euler method's error accumulation)
+
+· Phase-space accuracy
+
+· Symplectic time-reversibility
 
 
 ***Block 4: perform the calculations and save the results***
@@ -279,7 +289,7 @@ print(f"All figures are saved in: {os.path.abspath(output_dir)}")
 
 ```
 
-OKay. When you run the simulation, all figures will be saved in the folder you specified. Now we have completed the whole simulation. Although it is very simple and crude, it could roughly show the growth of structures under pure gravitation. It is funny, but have its limitations. For example, we just simply ignored the cosmic expansion, and also, there is no feedback process due to the absence of baryonic components and black holes. Maybe you could try to add them on your computer ^_^
+OKay. When you run the simulation, all figures will be saved in the folder you specified. Now we have completed the whole simulation. Although it is very simple and crude, it could roughly show the growth of structures(such as large-scale structures or several halos/ galaxies, depending on your parameters) under pure gravitation. It is funny, but have severe limitations. For example, we just simply ignored the cosmic expansion, and also, there is no feedback process due to the absence of baryonic components and black holes. Maybe you could try to add them on your computer ^_^
 
 Last but not least, we can see one example gif of the result. It shows the growth and merger of several galaxies. Due to the limitation of this site, I just used a part of frames to create the gif. And the code is attached below as well:
 
