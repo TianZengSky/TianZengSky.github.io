@@ -18,7 +18,7 @@ Modern cosmology theory tells us:
 The early universe had near-uniform matter distribution with tiny density fluctuations. Over hundreds of millions of years, gravity amplified these fluctuations - dense regions attracted more matter while voids lost material. Dark matter formed cosmic webs of filaments and halos, within which gas collapsed to form stars and galaxies, ultimately creating today's universe of galaxy clusters connected by filaments, separated by vast voids. This gravitational dance continues shaping cosmic structure. This is the big picture of our simple simulation.
 
 <div style="text-align: center;">
-  <img src="/assets/images/boxImage_TNG300-1_gas-coldens_thinSlice_1000.jpg" alt="Cosmic web" width="90%" />
+  <img src="/assets/images/boxImage_TNG100-1_stars-coldens_3840.png" alt="Cosmic web" width="100%" />
 </div>
 *This is how the large-scale stucture looks like. The figure is from [IllustrisTNG project](https://www.tng-project.org/media/).
  
