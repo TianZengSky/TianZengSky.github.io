@@ -28,9 +28,9 @@ However, as a very very simple one, our simulation won't consider all of these e
 
 ***Assumption 2:** only dark matter. **This is one of the core assumptions of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, baryonic matters are not that important for a simplified simulation: although they dominate the feedback processes, they just take a very small fraction of our universe.*
 
-***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: reducing spatial dimensions:*
+***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. Reducing spatial dimensions:*
 
-***· Cuts data a lot of storage needs.***
+***· Cuts a lot of data storage needs.***
 
 ***· Maintains qualitative structure formation patterns***
 
@@ -108,11 +108,11 @@ We create a 2D "universe box" with particles arranged in a near-uniform grid plu
 
 · Gaussian displacements (dx, dy) model quantum fluctuations
 
-· Perturbation amplitude (σ): Controls structure formation speed
+· Perturbation amplitude (sigma): Controls structure formation speed
 
 · Scale normalization: /np.sqrt(2) ensures proper variance distribution in 2D
 
-· Initial velocity approximation: Links initial velocities to density gradients
+· Initial velocity assumptions: Links initial velocities to density gradients
 
 · Reproducibility: np.random.seed(42) enables parameter comparison
 
