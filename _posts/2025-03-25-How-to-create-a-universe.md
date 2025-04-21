@@ -28,13 +28,13 @@ However, as a very very simple one, our simulation won't consider all of these e
 
 ***Assumption 2:** only dark matter. **This is one of the core assumptions of this simulation.** On the one hand, dark matter is usually considered as some kind of mysterious collisionless, purely-gravitational particles, which means that we could save many computational resources: no collision, no Navier-Stokes equation, no chemical evolution... On the other hand, baryonic matters are not that important for a simplified simulation: although they dominate the feedback processes, they just take a very small fraction of our universe.*
 
-***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: reducing spatial dimensions:
+***Assumption 3:** this is a 2D universe. **This is one of the core assumptions of this simulation** as well. The reason is quite clear: reducing spatial dimensions:*
 
-Cuts data a lot of storage needs.
+***· Cuts data a lot of storage needs.***
 
-Maintains qualitative structure formation patterns
+***· Maintains qualitative structure formation patterns***
 
-Enables personal computer execution
+***· Enables personal computer execution***
 
 ***Assumption 4:** we adopt newtonian gravitation completely. It is very understandable as well: save resource and is still precise enough due to almost no relativistic process here(we even abandoned Friedmann equations!).*
 
@@ -112,7 +112,7 @@ We create a 2D "universe box" with particles arranged in a near-uniform grid plu
 
 · Scale normalization: /np.sqrt(2) ensures proper variance distribution in 2D
 
-· Zel'dovich approximation: Links initial velocities to density gradients
+· Initial velocity approximation: Links initial velocities to density gradients
 
 · Reproducibility: np.random.seed(42) enables parameter comparison
 
