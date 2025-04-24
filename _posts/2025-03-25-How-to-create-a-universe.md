@@ -58,7 +58,7 @@ numba.set_num_threads(16)
 # Parameters
 n = 120            # number of particles is n*n
 L = 100.0         # Length of this universe
-sigma = 1e-2 * L  # factor of initial perturbation
+sigma = 1e-2 * L  # factor of primordial perturbations
 r_cut = 20.0       # cut radius
 softening = 0.4    # avoiding infinite gravitation
 dt = 0.01          # time step
